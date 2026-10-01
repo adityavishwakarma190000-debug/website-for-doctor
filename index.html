@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Avalon Healthcare & Advanced Medicine - Dr. Elena Vance, MD, FACC. Premier cardiology, preventive longevity medicine, and state-of-the-art diagnostic care in a modern, compassionate clinic.">
+  <meta name="keywords" content="doctor, cardiologist, preventive medicine, modern clinic, medical consultation, telehealth, Dr Elena Vance">
+  <meta name="author" content="Avalon Medical Group">
+  <title>Dr. Elena Vance, MD | Avalon Precision Medicine & Cardiology</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Core CSS -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Three.js (For High-Performance 3D Medical Core & Helix) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+  <!-- Spline Viewer Web Component (Ready for your Spline 3D Model link) -->
+  <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.72/build/spline-viewer.js"></script>
+</head>
+<body>
+
+  <!-- Top Clinical Announcement & Triage Bar -->
+  <div class="top-announcement">
+    <div class="container">
+      <div class="emergency-pill">
+        <svg class="ecg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+        </svg>
+        <span><strong>Live Clinical Status:</strong> Accepting New In-Person &amp; Telehealth Patients</span>
+      </div>
+      <div class="top-contact-info">
+        <a href="tel:+18005550199">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+          </svg>
+          Priority Desk: (800) 555-0199
+        </a>
+        <span>•</span>
+        <a href="#booking">Hours: Mon - Fri: 8:00 AM - 6:30 PM</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sticky Modern Navbar -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="#" class="brand-logo" id="main-brand-logo">
+        <div class="brand-icon-box">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="12" y1="5" x2="12" y2="19"></line>
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+          </svg>
+        </div>
+        <div class="brand-text">
+          AVALON
+          <span>Advanced Medicine</span>
+        </div>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#services" class="nav-link">Specialties</a></li>
+        <li><a href="#doctor" class="nav-link">About Dr. Vance</a></li>
+        <li><a href="#technology" class="nav-link">Clinic &amp; Tech</a></li>
+        <li><a href="#triage" class="nav-link">Symptom Triage</a></li>
+        <li><a href="#testimonials" class="nav-link">Patient Stories</a></li>
+        <li><a href="#faq" class="nav-link">FAQ</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="#booking" class="btn-primary" id="nav-book-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="16" y1="2" x2="16" y2="6"></line>
+            <line x1="8" y1="2" x2="8" y2="6"></line>
+            <line x1="3" y1="10" x2="21" y2="10"></line>
+          </svg>
+          Book Consultation
+        </a>
+        <button class="mobile-toggle" aria-label="Toggle Navigation Menu">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section with Spline 3D as Primary Canvas & Layered Information HUD -->
+  <section class="hero-section hero-spline-stage" id="hero">
+    <div class="hero-bg-orb hero-bg-orb-1"></div>
+    <div class="hero-bg-orb hero-bg-orb-2"></div>
+
+    <!-- The 3D Interactive Canvas Stage -->
+    <div class="hero-3d-stage" id="hero-3d-stage">
+      <div id="spline-3d-container" aria-label="Interactive 3D Diagonal DNA Element">
+        <!-- 3D WebGL Diagonal DNA Helix rendered here -->
+      </div>
+    </div>
+
+    <!-- HUD Information Layer Designed Directly ON the 3D Element -->
+    <div class="container hero-hud-overlay">
+      
+      <!-- Top Status & Interaction Bar -->
+      <div class="hero-top-hud">
+        <div class="badge badge-cool badge-pulse">
+          Harvard &amp; Johns Hopkins Trained • Double Board Certified
+        </div>
+        
+        <div class="hero-spline-status-group">
+          <div class="spline-badge-overlay">
+            <div class="spline-badge-dot"></div>
+            <span id="spline-badge-label">3D DNA Helix Active</span>
+          </div>
+          <button class="spline-switch-btn" id="open-spline-modal" title="Change or test 3D / Spline link">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+            3D Options
+          </button>
+        </div>
+      </div>
+
+      <!-- Main Direct Text Content (NO BACK PANEL - TEXT DIRECTLY ON 3D ELEMENT) -->
+      <div class="hero-main-hud-grid">
+        <div class="hero-text-direct">
+          <div class="hero-panel-tag">
+            <span class="pulse-indicator"></span>
+            Avalon Precision Cardiology &amp; Longevity
+          </div>
+
+          <h1 class="hero-title">
+            Precision Medicine Meets <span class="gradient-text-cool">Compassionate Care.</span>
+          </h1>
+
+          <p class="hero-description">
+            Experience a new echelon of personalized medicine led by <strong>Dr. Elena Vance, MD, FACC</strong>. 
+            Merging cutting-edge cardiovascular hemodynamics, early biomarker diagnostics, and unhurried patient-first clinical attention.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#booking" class="btn-primary" id="hero-book-btn">
+              Schedule Private Consultation
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+            <a href="#services" class="btn-secondary" id="hero-explore-btn">
+              Explore Specialties
+            </a>
+          </div>
+
+          <!-- Doctor Credential Card Embedded inside the Glass HUD -->
+          <div class="hero-doctor-badge">
+            <img src="assets/images/doctor_portrait.jpg" alt="Dr. Elena Vance, MD" class="doctor-avatar-small">
+            <div class="doc-meta">
+              <h4>Dr. Elena Vance, MD, FACC</h4>
+              <p>Chief Physician • 15+ Yrs Practice • Accepting New Patients</p>
+            </div>
+            <div class="doctor-status-tag">Verified MD</div>
+          </div>
+        </div>
+
+        <!-- Floating Telemetry HUD Stack Designed ON the Right Side of the 3D Element -->
+        <div class="hero-telemetry-hud-stack">
+          <!-- Card 1: Live Sinus Rhythm -->
+          <div class="telemetry-card telemetry-card-1">
+            <div class="telemetry-icon-box">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+              </svg>
+            </div>
+            <div class="telemetry-info">
+              <div class="telemetry-label">Live Vitals Telemetry</div>
+              <div class="telemetry-val">72 BPM • Sinus Rhythm</div>
+              <div class="telemetry-status">Optimal Arterial Hemodynamics</div>
+            </div>
+          </div>
+
+          <!-- Card 2: AI Diagnostic Precision -->
+          <div class="telemetry-card telemetry-card-2">
+            <div class="telemetry-icon-box cyan-glow">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
+            </div>
+            <div class="telemetry-info">
+              <div class="telemetry-label">Diagnostic Precision</div>
+              <div class="telemetry-val">99.8% Accuracy</div>
+              <div class="telemetry-status">Microvascular Plaque Analysis</div>
+            </div>
+          </div>
+
+          <!-- Card 3: Priority Consultation Slot -->
+          <div class="telemetry-card telemetry-card-3">
+            <div class="telemetry-icon-box">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+            </div>
+            <div class="telemetry-info">
+              <div class="telemetry-label">Next Available Slot</div>
+              <div class="telemetry-val">Today at 2:30 PM</div>
+              <div class="telemetry-status">Dr. Vance (Private Suite &amp; Virtual)</div>
+            </div>
+          </div>
+
+          <!-- 3D Orbit & Drag Hint -->
+          <div class="spline-drag-instruction">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M12 8v8M8 12h8"></path>
+            </svg>
+            <span>Interactive 3D Stage • Drag anywhere to rotate</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Interactive Specialty Anchor Pills Floating on the 3D Element -->
+      <div class="hero-bottom-pills-bar">
+        <span class="pills-title">Clinical Focus:</span>
+        <a href="#services" class="hero-quick-pill">❤️ Preventive Cardiology</a>
+        <a href="#services" class="hero-quick-pill">🧬 Longevity Medicine</a>
+        <a href="#services" class="hero-quick-pill">🔬 Diagnostic Ultrasound</a>
+        <a href="#services" class="hero-quick-pill">💻 Telehealth Sync</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Key Clinical Numbers / Trust Ribbon -->
+  <section class="stats-ribbon">
+    <div class="container stats-grid">
+      <div class="stat-item">
+        <div class="stat-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+            <circle cx="8.5" cy="7.5" r="4"></circle>
+            <polyline points="17 11 19 13 23 9"></polyline>
+          </svg>
+        </div>
+        <div class="stat-content">
+          <h3>14,000+</h3>
+          <p>Patients Treated</p>
+        </div>
+      </div>
+
+      <div class="stat-item">
+        <div class="stat-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="8" r="7"></circle>
+            <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+          </svg>
+        </div>
+        <div class="stat-content">
+          <h3>15+ Years</h3>
+          <p>Clinical Excellence</p>
+        </div>
+      </div>
+
+      <div class="stat-item">
+        <div class="stat-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+          </svg>
+        </div>
+        <div class="stat-content">
+          <h3>4.98 / 5.0</h3>
+          <p>Verified Patient Rating</p>
+        </div>
+      </div>
+
+      <div class="stat-item">
+        <div class="stat-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+          </svg>
+        </div>
+        <div class="stat-content">
+          <h3>Top 1%</h3>
+          <p>Board Certified Specialist</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Clinical Specialties Section (3D Tilt Cards) -->
+  <section class="section-wrapper" id="services">
+    <div class="container">
+      <div class="section-header">
+        <div class="badge badge-cool">Comprehensive Clinical Practice</div>
+        <h2 class="section-title">Specialized Medical Care Tailored to You</h2>
+        <p class="section-subtitle">
+          From advanced cardiac risk mapping to restorative longevity protocols, every treatment plan is tailored with evidence-based rigor and empathetic care.
+        </p>
+      </div>
+
+      <div class="cards-3d-grid">
+        <!-- Card 1 -->
+        <div class="card-3d-tilt">
+          <div class="card-icon-bubble">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+            </svg>
+          </div>
+          <h3>Cardiology &amp; Vascular Health</h3>
+          <p>Early plaque detection, hypertension management, arrhythmia mapping, and non-invasive hemodynamic monitoring.</p>
+          <ul class="card-features-list">
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              Color Doppler Echocardiography
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              Continuous Holter Monitoring
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              Coronary Calcium Score Analysis
+            </li>
+          </ul>
+          <a href="#booking" class="card-action-link">
+            Request Specialist Consult &rarr;
+          </a>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card-3d-tilt">
+          <div class="card-icon-bubble">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+            </svg>
+          </div>
+          <h3>Longevity &amp; Preventive Health</h3>
+          <p>Proactive health optimization, metabolic profiling, and personalized anti-aging interventions based on biomarkers.</p>
+          <ul class="card-features-list">
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              Deep Hormonal &amp; Lipid Panels
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              VO2 Max &amp; Cellular Fitness
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              Nutrigenomics &amp; Supplement Strategy
+            </li>
+          </ul>
+          <a href="#booking" class="card-action-link">
+            Learn About Longevity &rarr;
+          </a>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card-3d-tilt">
+          <div class="card-icon-bubble">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="22" y1="12" x2="18" y2="12"></line>
+              <line x1="6" y1="12" x2="2" y2="12"></line>
+              <line x1="12" y1="6" x2="12" y2="2"></line>
+              <line x1="12" y1="22" x2="12" y2="18"></line>
+            </svg>
+          </div>
+          <h3>Advanced Imaging &amp; Diagnostics</h3>
+          <p>Instant on-site ultra-high resolution ultrasonography, arterial stiffness testing, and rapid blood diagnostics.</p>
+          <ul class="card-features-list">
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              Same-day Diagnostic Reports
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              Carotid Intima-Media Thickness (CIMT)
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              Direct Digital Physician Review
+            </li>
+          </ul>
+          <a href="#booking" class="card-action-link">
+            Explore Diagnostics &rarr;
+          </a>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="card-3d-tilt">
+          <div class="card-icon-bubble">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+          </div>
+          <h3>Comprehensive Executive Physicals</h3>
+          <p>Multi-organ evaluation for busy professionals seeking a complete health baseline in a streamlined single visit.</p>
+          <ul class="card-features-list">
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              Zero Waiting Time
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              Comprehensive 360° Health Report
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              One-on-One 90 Min Doctor Review
+            </li>
+          </ul>
+          <a href="#booking" class="card-action-link">
+            Schedule Physical &rarr;
+          </a>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="card-3d-tilt">
+          <div class="card-icon-bubble">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+              <line x1="8" y1="21" x2="16" y2="21"></line>
+              <line x1="12" y1="17" x2="12" y2="21"></line>
+            </svg>
+          </div>
+          <h3>Telehealth &amp; Remote Monitoring</h3>
+          <p>Encrypted HD virtual consultations paired with cellular-connected continuous vitals monitoring from home.</p>
+          <ul class="card-features-list">
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              HIPAA Compliant Video Suite
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              Smart Blood Pressure &amp; ECG Sync
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              Direct Messaging With Doctor
+            </li>
+          </ul>
+          <a href="#booking" class="card-action-link">
+            Start Virtual Visit &rarr;
+          </a>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="card-3d-tilt">
+          <div class="card-icon-bubble">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+            </svg>
+          </div>
+          <h3>Urgent &amp; Same-Day Consultations</h3>
+          <p>Direct rapid evaluation for acute symptoms such as palpitations, sudden blood pressure spikes, or chest tightness.</p>
+          <ul class="card-features-list">
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              Same-day Priority Slots
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              Immediate On-site ECG &amp; Troponin
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              Hospital Triage Coordination
+            </li>
+          </ul>
+          <a href="#booking" class="card-action-link">
+            Request Same-Day Slot &rarr;
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Meet Dr. Elena Vance Section -->
+  <section class="section-wrapper section-wrapper-alt" id="doctor">
+    <div class="container doctor-bio-grid">
+      <div class="doctor-image-frame">
+        <img src="assets/images/doctor_portrait.jpg" alt="Dr. Elena Vance, MD, FACC standing in her modern clinic">
+        <div class="doctor-badge-overlay">
+          <h4>Dr. Elena Vance, MD, FACC</h4>
+          <p>Founder &amp; Chief Physician • Avalon Advanced Medicine</p>
+        </div>
+      </div>
+
+      <div class="bio-content">
+        <div class="badge badge-cool">Meet Your Physician</div>
+        <h2>"Medicine should not only treat illness, but ignite lifelong vitality."</h2>
+        <p>
+          Dr. Elena Vance is a double board-certified physician in Cardiovascular Disease and Internal Medicine. 
+          After graduating Magna Cum Laude from Harvard Medical School and completing her fellowship at The Johns Hopkins Hospital, 
+          she dedicated her career to reimagining doctor-patient relationships.
+        </p>
+        <p>
+          At Avalon, every patient receives unhurried, deeply attentive care backed by the world's most sophisticated diagnostic imaging. 
+          Dr. Vance believes in identifying subtle micro-vascular and metabolic imbalances years before they become clinical symptoms.
+        </p>
+
+        <div class="credentials-grid">
+          <div class="credential-box">
+            <h5>Harvard Medical School</h5>
+            <p>Doctor of Medicine (MD), Honors</p>
+          </div>
+          <div class="credential-box">
+            <h5>The Johns Hopkins Hospital</h5>
+            <p>Cardiology &amp; Vascular Fellowship</p>
+          </div>
+          <div class="credential-box">
+            <h5>FACC Fellow</h5>
+            <p>Fellow of the American College of Cardiology</p>
+          </div>
+          <div class="credential-box">
+            <h5>Top Doctor Award</h5>
+            <p>Recognized Top Specialist 2022–2026</p>
+          </div>
+        </div>
+
+        <a href="#booking" class="btn-primary">
+          Schedule Consultation with Dr. Vance
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modern Clinic Tour & State-of-the-Art Technology -->
+  <section class="section-wrapper" id="technology">
+    <div class="container clinic-showcase-grid">
+      <div class="clinic-images-stacked">
+        <img src="assets/images/clinic_interior.jpg" alt="Spacious minimalist modern medical reception lounge" class="clinic-primary-img">
+        <img src="assets/images/doctor_consultation.jpg" alt="Dr. Vance consulting with patient using high-tech holographic diagnostic display" class="clinic-floating-thumb">
+      </div>
+
+      <div class="showcase-content">
+        <div class="badge badge-cool">World-Class Environment</div>
+        <h2 class="section-title">Designed for Calmness. Engineered for Precision.</h2>
+        <p class="section-subtitle">
+          Say goodbye to sterile, stressful waiting rooms. Avalon Clinic is purposefully crafted with tranquil architectural acoustics, panoramic natural lighting, and private consultation suites.
+        </p>
+
+        <ul class="tech-checklist">
+          <li class="tech-check-item">
+            <div class="check-icon-wrap">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            </div>
+            <div class="check-item-text">
+              <h4>Zero-Wait Private Check-In</h4>
+              <p>Direct entry into your personal clinical suite without crowded communal waiting rooms.</p>
+            </div>
+          </li>
+
+          <li class="tech-check-item">
+            <div class="check-icon-wrap">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            </div>
+            <div class="check-item-text">
+              <h4>Ultra-Quiet High-Resolution Ultrasound</h4>
+              <p>Instant real-time 4D cardiac imaging displayed on high-clarity patient monitors as we examine.</p>
+            </div>
+          </li>
+
+          <li class="tech-check-item">
+            <div class="check-icon-wrap">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            </div>
+            <div class="check-item-text">
+              <h4>Integrated On-Site Rapid Lab</h4>
+              <p>Key cardiac, lipid, and metabolic biomarker results in under 20 minutes during your visit.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Symptom Triage Widget -->
+  <section class="section-wrapper section-wrapper-alt" id="triage">
+    <div class="container">
+      <div class="triage-card">
+        <div class="triage-header">
+          <div class="badge badge-cool">Interactive Clinical Assistant</div>
+          <h3>Select Your Current Health Focus</h3>
+          <p>Click on any symptom or health goal below to see Dr. Vance's clinical recommendation and consultation protocol.</p>
+        </div>
+
+        <div class="triage-interactive-box">
+          <div class="symptom-chips">
+            <button class="symptom-chip active">Chest Tightness / Palpitations</button>
+            <button class="symptom-chip">Chronic Fatigue &amp; Low Energy</button>
+            <button class="symptom-chip">High Blood Pressure</button>
+            <button class="symptom-chip">Annual Preventive Checkup</button>
+            <button class="symptom-chip">Headaches &amp; Dizziness</button>
+            <button class="symptom-chip">Sleep Apnea &amp; Restlessness</button>
+          </div>
+
+          <div class="triage-result-panel">
+            <div>
+              <h4 id="triage-title">Cardiovascular Care Recommended</h4>
+              <p id="triage-desc">Priority consultation with Dr. Vance. ECG &amp; Echocardiogram evaluation advised within 24-48 hours. (Approx. 45 mins)</p>
+            </div>
+            <button class="btn-primary" id="triage-action-btn">
+              Proceed with this Specialty &rarr;
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Verified Patient Testimonials -->
+  <section class="section-wrapper" id="testimonials">
+    <div class="container">
+      <div class="section-header">
+        <div class="badge badge-cool">Patient Experiences</div>
+        <h2 class="section-title">Compassionate Care, Proven Results</h2>
+        <p class="section-subtitle">Real experiences from patients whose health and longevity have been transformed under Dr. Vance's guidance.</p>
+      </div>
+
+      <div class="testimonials-grid">
+        <!-- Testimonial 1 -->
+        <div class="testimonial-card">
+          <div class="rating-stars">
+            ★★★★★
+          </div>
+          <p class="testimonial-text">
+            "Dr. Vance identified a subtle arterial constriction during a routine preventive checkup that two other doctors missed. Her calm demeanor, thorough diagnostics, and precision treatment plan literally saved my active life."
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">MR</div>
+            <div class="author-meta">
+              <h5>Marcus Reynolds</h5>
+              <p>Cardiology Patient • 3 Years Under Care</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="testimonial-card">
+          <div class="rating-stars">
+            ★★★★★
+          </div>
+          <p class="testimonial-text">
+            "The clinic feels like a modern sanctuary rather than an intimidating doctor’s office. Dr. Vance spent 60 minutes explaining my lab results line by line. I have never felt more heard and cared for by a medical professional."
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">SL</div>
+            <div class="author-meta">
+              <h5>Sarah Lin, PhD</h5>
+              <p>Longevity &amp; Preventive Health Program</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div class="testimonial-card">
+          <div class="rating-stars">
+            ★★★★★
+          </div>
+          <p class="testimonial-text">
+            "From the zero-wait check-in to same-day ultrasound results, Avalon sets an entirely new benchmark for medicine. Dr. Vance’s cardiovascular protocol helped normalize my blood pressure without heavy medication."
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">DH</div>
+            <div class="author-meta">
+              <h5>David Harrison</h5>
+              <p>Executive Physical &amp; Vascular Care</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Appointment Booking Section -->
+  <section class="booking-section" id="booking">
+    <div class="container booking-grid">
+      <div class="booking-info">
+        <div class="badge badge-cool">Schedule Your Visit</div>
+        <h2>Start Your Personalized Health Journey Today</h2>
+        <p>
+          Whether you need a specialized cardiovascular assessment, a preventive physical, or an urgent consultation, booking is seamless.
+        </p>
+
+        <ul class="booking-guarantees">
+          <li>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Same-day and next-day appointment availability
+          </li>
+          <li>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            In-person and encrypted virtual telemedicine options
+          </li>
+          <li>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Transparent pricing &amp; direct insurance coordination
+          </li>
+          <li>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Private, dedicated parking and barrier-free access
+          </li>
+        </ul>
+      </div>
+
+      <!-- Booking Card Form -->
+      <div class="booking-card-form">
+        <h3>Reserve Your Appointment</h3>
+        <p class="sub">Fast confirmation within 15 minutes during clinical hours.</p>
+
+        <form id="appointment-form">
+          <input type="hidden" id="selected-time-slot" value="09:00 AM">
+
+          <div class="form-group-row">
+            <div class="form-group">
+              <label for="patient-name">Full Name *</label>
+              <input type="text" id="patient-name" class="form-control" placeholder="e.g. Eleanor Davis" required>
+            </div>
+            <div class="form-group">
+              <label for="patient-phone">Phone Number *</label>
+              <input type="tel" id="patient-phone" class="form-control" placeholder="(555) 000-0000" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="patient-email">Email Address *</label>
+            <input type="email" id="patient-email" class="form-control" placeholder="eleanor@example.com" required>
+          </div>
+
+          <div class="form-group-row">
+            <div class="form-group">
+              <label for="appointment-service">Select Specialty *</label>
+              <select id="appointment-service" class="form-control" required>
+                <option value="Cardiology Consultation">Cardiovascular Care</option>
+                <option value="Preventive & Longevity Medicine">Preventive &amp; Longevity Medicine</option>
+                <option value="Comprehensive Executive Physical">Executive Health Physical</option>
+                <option value="Advanced Ultrasound & Imaging">Advanced Diagnostics &amp; Imaging</option>
+                <option value="Virtual Telehealth Consultation">Virtual Telehealth Visit</option>
+                <option value="Urgent Same-Day Evaluation">Urgent Same-Day Consultation</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="appointment-date">Preferred Date *</label>
+              <input type="date" id="appointment-date" class="form-control" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Available Time Windows</label>
+            <div class="time-slot-grid">
+              <button type="button" class="time-slot-btn active">09:00 AM</button>
+              <button type="button" class="time-slot-btn">11:15 AM</button>
+              <button type="button" class="time-slot-btn">01:30 PM</button>
+              <button type="button" class="time-slot-btn">03:00 PM</button>
+              <button type="button" class="time-slot-btn">04:45 PM</button>
+              <button type="button" class="time-slot-btn">05:30 PM</button>
+            </div>
+          </div>
+
+          <button type="submit" class="btn-primary" style="width: 100%; margin-top: 1rem;">
+            Confirm Appointment Request
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Frequently Asked Questions -->
+  <section class="section-wrapper" id="faq">
+    <div class="container">
+      <div class="section-header">
+        <div class="badge badge-cool">Patient Inquiries</div>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-subtitle">Everything you need to know about your consultation, insurance coverage, and clinic protocols.</p>
+      </div>
+
+      <div class="faq-accordion">
+        <div class="faq-item active">
+          <button class="faq-question">
+            <span>What should I expect during my first consultation with Dr. Vance?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Your first visit is typically 45 to 60 minutes long. Dr. Vance conducts a comprehensive medical history review, physical examination, resting 12-lead ECG, and personalized discussion of your health goals without rushing.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Do you accept health insurance?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes. We accept most major PPO insurances and Medicare. For specialized executive longevity panels and non-covered tests, our staff provides clear upfront pricing and full reimbursement superbills.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>How quickly can I get diagnostic test results?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>In-house echocardiograms, vascular ultrasounds, and rapid lipid/metabolic blood panels are reviewed with you directly during your appointment. Advanced genetic or specialized panels take 3 to 5 business days.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Can I book a virtual telehealth visit if I live out of the city?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes, Dr. Vance offers encrypted, high-definition virtual visits for medical second opinions, preventive health optimization, and ongoing routine care for qualifying patients.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>How do I embed my 3D Spline scene into this website?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>You can click the <strong>"Paste Spline Link"</strong> button located in the Hero section or open <code>js/main.js</code> and paste your Spline URL directly into the <code>USER_SPLINE_URL</code> variable. The site immediately renders your 3D Spline model in full interactive glory!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <h4>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#06b6d4" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="12" y1="5" x2="12" y2="19"></line>
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+          </svg>
+          AVALON MEDICINE
+        </h4>
+        <p>
+          Pioneering precision cardiology, preventive diagnostics, and restorative longevity care in an elevated clinical environment.
+        </p>
+        <p style="font-size: 0.8rem; color: #64748b;">
+          Medical License #MED-849204 • State Board of Medicine
+        </p>
+      </div>
+
+      <div>
+        <h5 class="footer-heading">Clinical Specialties</h5>
+        <ul class="footer-links">
+          <li><a href="#services">Cardiology &amp; Vascular</a></li>
+          <li><a href="#services">Longevity &amp; Aging</a></li>
+          <li><a href="#services">Advanced Ultrasonography</a></li>
+          <li><a href="#services">Executive Physicals</a></li>
+          <li><a href="#services">Telehealth Visits</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h5 class="footer-heading">Patient Resources</h5>
+        <ul class="footer-links">
+          <li><a href="#doctor">Dr. Vance Credentials</a></li>
+          <li><a href="#technology">Clinic &amp; Diagnostic Tech</a></li>
+          <li><a href="#triage">Symptom Checker</a></li>
+          <li><a href="#testimonials">Patient Reviews</a></li>
+          <li><a href="#faq">Insurance &amp; Billing</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h5 class="footer-heading">Clinic Location &amp; Contact</h5>
+        <div class="footer-contact-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+          <span>450 Medical Plaza Parkway, Suite 600<br>Metropolitan Health District, CA 94107</span>
+        </div>
+        <div class="footer-contact-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+          <span>(800) 555-0199</span>
+        </div>
+        <div class="footer-contact-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+          <span>care@avalonmedicine.com</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <div>&copy; 2026 Avalon Healthcare &amp; Advanced Medicine, LLC. All rights reserved.</div>
+      <div>HIPAA Compliant • Confidential Medical Services • Emergency Dial 911</div>
+    </div>
+  </footer>
+
+  <!-- Spline 3D Link Tester & Switcher Modal -->
+  <div class="spline-modal-overlay" id="spline-modal">
+    <div class="spline-modal-content">
+      <button class="spline-modal-close" id="close-spline-modal" aria-label="Close Modal">&times;</button>
+      <div class="badge badge-cool" style="margin-bottom: 0.75rem;">3D Spline Integration</div>
+      <h3 style="font-family: var(--font-heading); font-size: 1.5rem; color: var(--navy-900); margin-bottom: 0.5rem;">
+        Add Your 3D Spline Element
+      </h3>
+      <p style="font-size: 0.9rem; color: var(--slate-600); margin-bottom: 1.5rem; line-height: 1.6;">
+        Paste your Spline export URL (ending in <code>scene.splinecode</code>) below to preview your custom 3D element live in the hero section!
+      </p>
+
+      <div class="form-group">
+        <label for="spline-url-input" style="font-size: 0.85rem; font-weight: 600; color: var(--navy-900); margin-bottom: 0.4rem; display: block;">
+          Spline Scene URL
+        </label>
+        <input type="text" id="spline-url-input" class="form-control" placeholder="https://prod.spline.design/xxxxxxxx/scene.splinecode">
+      </div>
+
+      <div style="display: flex; gap: 0.75rem; margin-top: 1.5rem;">
+        <button class="btn-primary" id="apply-spline-url-btn" style="flex: 1;">
+          Load Spline Scene
+        </button>
+        <button class="btn-secondary" id="reset-3d-btn" style="flex: 1;">
+          Reset to 3D Helix
+        </button>
+      </div>
+
+      <div style="margin-top: 1.25rem; padding: 0.75rem 1rem; background: var(--ice-100); border-radius: var(--radius-md); font-size: 0.775rem; color: var(--slate-500); line-height: 1.5;">
+        💡 <strong>Tip for code:</strong> You can also paste your link directly into <code>js/main.js</code> inside <code>const USER_SPLINE_URL = '...';</code> so it stays permanently saved.
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+</body>
+</html>
